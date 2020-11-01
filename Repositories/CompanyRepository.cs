@@ -43,7 +43,7 @@ namespace FastnMenu.Repositories
             }).ToListAsync();
         }
 
-        public async Task<List<CompanyMenuType>> GetCompanyWithMenuWithTypeByQrCode(string QrCode)
+        public async Task<CompanyMenuType> GetCompanyWithMenuWithTypeByQrCode(string QrCode)
         {
 
             return await _context.Companies.Include(m => m.Menus).ThenInclude(x => x.Categories)
@@ -73,7 +73,7 @@ namespace FastnMenu.Repositories
                 Picture = s.Picture,
                 QRCode = s.QRCode,
                 WorkHour = s.WorkHour
-            }).ToListAsync();
+            }).FirstOrDefaultAsync();
         }
 
         public async Task<List<CompanyMenuType>> GetCompanyWithQrAndCategoryId(string QrCode, int CategoryId)

@@ -21,7 +21,7 @@ namespace FastnMenu.Controllers
             return await _service.GetCompanyWithMenuAndType();
         }
         [HttpGet("{id}")]
-        public async Task<List<CompanyMenuType>> Get(string id)
+        public async Task<CompanyMenuType> Get(string id)
         {
             return await _service.GetCompanyWithMenuWithTypeByQrCode(id);
         }

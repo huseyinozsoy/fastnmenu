@@ -18,7 +18,7 @@ namespace FastnMenu.Services
             return await _repo.GetCompanyWithMenuAndType();
         }
 
-        public async Task<List<CompanyMenuType>> GetCompanyWithMenuWithTypeByQrCode(string QrCode)
+        public async Task<CompanyMenuType> GetCompanyWithMenuWithTypeByQrCode(string QrCode)
         {
             return await _repo.GetCompanyWithMenuWithTypeByQrCode(QrCode);
         }
